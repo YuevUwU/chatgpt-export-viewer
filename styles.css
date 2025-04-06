@@ -1,0 +1,225 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --border-color: #ddd;
+    --hover-color: #e0e0e0;
+    --chat-bg: #fff;
+    --message-bg: #fff;
+    --user-message-bg: #007bff;
+    --user-message-color: #fff;
+    --assistant-message-bg: #f0f0f0;
+    --system-message-bg: #f8f9fa;
+    --system-message-color: #666;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --border-color: #333;
+        --hover-color: #2a2a2a;
+        --chat-bg: #242424;
+        --message-bg: #2a2a2a;
+        --user-message-bg: #1e3a5f;
+        --user-message-color: #fff;
+        --assistant-message-bg: #333;
+        --system-message-bg: #2a2a2a;
+        --system-message-color: #999;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 300px;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sidebar-header h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.search-container {
+    flex: 1;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-item {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item:hover {
+    background-color: var(--hover-color);
+}
+
+.chat-item-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-item-date {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--chat-bg);
+}
+
+.chat-header {
+    height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chat-header h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.chat-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Message styles */
+.message {
+    max-width: 80%;
+    padding: 15px;
+    border-radius: 20px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    background-color: var(--message-bg);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    font-size: 17px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background-color: var(--assistant-message-bg);
+    margin-right: 20%;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--user-message-bg);
+    color: var(--user-message-color);
+    margin-left: 20%;
+}
+
+.message.system {
+    align-self: center;
+    background-color: var(--system-message-bg);
+    color: var(--system-message-color);
+    font-style: italic;
+    max-width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+} 
