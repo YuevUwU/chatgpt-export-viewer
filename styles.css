@@ -191,6 +191,26 @@ h2 {
     background-color: var(--message-bg);
     box-shadow: 0 1px 3px var(--shadow-color);
     font-size: 17px;
+
+    & code { 
+    font-family: 'Fira Mono', monospace;
+    }
+
+    & ul, & ol {
+        padding-left: 1.5em;
+        /* Remove gap between ul and li */
+        margin: -1.5em 0;
+    }
+
+    & li {
+        /* Remove gap between li and li */
+        margin: -0.5em 0;
+    }
+
+    & li > ul {
+        /* The default gap between ul.li.ul and ul.li.ul.li is  */
+        margin-block-start: auto;
+    }
 }
 
 .message.assistant {
