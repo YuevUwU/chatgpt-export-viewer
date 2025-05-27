@@ -1,3 +1,6 @@
+# Exclude unprocessed conversation data
+conversations.json
+
 # Exclude chats directory
 chats/
 
