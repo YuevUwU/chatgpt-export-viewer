@@ -1,0 +1,15 @@
+tabWidth: 4
+useTabs: false
+# Original author uses double quote in HTML and single quote in JS
+# However, Prettier for VS Code can't use different config based on language in the same HTML file
+# After split, you can un-comment the below config
+# override:
+#   - files:
+#       - *.html
+#       - *.css
+#     options:
+#       singleQuote: true
+#   - files:
+#       - *.js
+#     options:
+#       singleQuote: false
