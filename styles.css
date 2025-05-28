@@ -180,8 +180,14 @@ h2 {
     gap: 20px;
 }
 
+/* TODO */
+/* .fork-selector {
+
+} */
+
 /* Message styles */
 .message {
+    /* TODO: Set color for invalid */
     max-width: 80%;
     padding: 15px;
     border-radius: 20px;
@@ -236,6 +242,17 @@ h2 {
     padding: 10px;
     margin: 10px 0;
 }
+
+/* TODO */
+/* .message.thoughts {
+
+}
+.message.reasoning_recap {
+
+}
+.message.user_editable_context {
+
+} */
 
 .no-results {
     padding: 20px;
